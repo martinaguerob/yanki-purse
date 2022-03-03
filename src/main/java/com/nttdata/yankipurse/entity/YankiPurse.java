@@ -2,6 +2,7 @@ package com.nttdata.yankipurse.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,6 +13,7 @@ import java.util.Date;
 @Document(collection = "yanki-purse")
 public class YankiPurse {
 
+    @Id
     private String id;
     private Double balance;
     private String numberAccount;

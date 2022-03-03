@@ -29,6 +29,13 @@ public class YankiPurseController {
         return yankiPurseService.save(yankiPurse);
     }
 
+    @PutMapping("/update/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Mono<YankiPurse> updateYankiPurse(@RequestBody YankiPurse yankiPurse, String id){
+        System.out.println("Actualizar Yanki Purse");
+        return yankiPurseService.update(yankiPurse, id);
+    }
+
     @GetMapping("/number/{numberAccount}")
     @ResponseStatus(HttpStatus.OK)
     public Mono<YankiPurse> getYankiPurseByNumberAccount(@PathVariable String numberAccount){
