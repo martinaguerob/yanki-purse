@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/purse")
+@RequestMapping("/yanki-purse")
 public class YankiPurseController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class YankiPurseController {
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<YankiPurse> updateYankiPurse(@RequestBody YankiPurse yankiPurse, String id){
+    public Mono<YankiPurse> updateYankiPurse(@RequestBody YankiPurse yankiPurse, @PathVariable String id){
         System.out.println("Actualizar Yanki Purse");
         return yankiPurseService.update(yankiPurse, id);
     }
